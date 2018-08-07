@@ -8,10 +8,6 @@ RUN wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add 
 	apt-get install -y default-jre &&\
 	apt-get install -y default-jdk &&\
 	apt-get install -y jenkins
-#COPY ./scripts/start.sh /start.sh
-#RUN chmod +x /start.sh
-#CMD /start.sh
 CMD [ "sh", "-c", "service jenkins start; bash"]
-#CMD [ "sh", "-c", "service jenkins start" ]
 EXPOSE 8080
 
